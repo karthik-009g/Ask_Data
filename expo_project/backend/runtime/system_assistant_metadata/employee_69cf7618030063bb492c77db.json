@@ -1,0 +1,455 @@
+{
+  "generated_at": "2026-04-18T09:48:57.201589+00:00",
+  "user": {
+    "id": "69cf7618030063bb492c77db",
+    "role": "employee",
+    "organisation": "novexa",
+    "email": "ga***@gmail.com",
+    "full_name": "ganesh"
+  },
+  "app": {
+    "assistant": "system_assistant",
+    "scope": "operations_metadata_permissions",
+    "forbidden": [
+      "password",
+      "token",
+      "encrypted_password",
+      "connection_url",
+      "raw credentials"
+    ]
+  },
+  "organisation": {
+    "name": "novexa"
+  },
+  "connections": [
+    {
+      "id": 2,
+      "name": "clg_database",
+      "db_type": "postgresql",
+      "database_name": "vegeta_college_db",
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "name": "car_database",
+      "db_type": "postgresql",
+      "database_name": "vegeta_cars",
+      "is_active": true
+    },
+    {
+      "id": 4,
+      "name": "wine_data",
+      "db_type": "postgresql",
+      "database_name": "vegeta_wine_company",
+      "is_active": true
+    }
+  ],
+  "schema": {
+    "vegeta_college_db": {
+      "tables": {
+        "departments": {
+          "columns": [
+            {
+              "name": "dept_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "dept_name",
+              "type": "VARCHAR(100)"
+            }
+          ]
+        },
+        "professors": {
+          "columns": [
+            {
+              "name": "professor_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "name",
+              "type": "VARCHAR(100)"
+            },
+            {
+              "name": "dept_id",
+              "type": "INTEGER"
+            }
+          ]
+        },
+        "students": {
+          "columns": [
+            {
+              "name": "student_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "name",
+              "type": "VARCHAR(120)"
+            },
+            {
+              "name": "dept_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "year",
+              "type": "INTEGER"
+            },
+            {
+              "name": "cgpa",
+              "type": "NUMERIC(3, 2)"
+            }
+          ]
+        },
+        "courses": {
+          "columns": [
+            {
+              "name": "course_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "course_name",
+              "type": "VARCHAR(120)"
+            },
+            {
+              "name": "dept_id",
+              "type": "INTEGER"
+            }
+          ]
+        },
+        "enrollments": {
+          "columns": [
+            {
+              "name": "enrollment_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "student_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "course_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "semester",
+              "type": "INTEGER"
+            },
+            {
+              "name": "grade",
+              "type": "VARCHAR(2)"
+            }
+          ]
+        },
+        "attendance": {
+          "columns": [
+            {
+              "name": "attendance_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "student_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "course_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "attendance_percent",
+              "type": "NUMERIC(5, 2)"
+            }
+          ]
+        },
+        "fees": {
+          "columns": [
+            {
+              "name": "fee_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "student_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "amount",
+              "type": "NUMERIC"
+            },
+            {
+              "name": "status",
+              "type": "VARCHAR(20)"
+            }
+          ]
+        }
+      }
+    },
+    "vegeta_cars": {
+      "tables": {
+        "cars": {
+          "columns": [
+            {
+              "name": "model_name",
+              "type": "VARCHAR(120)"
+            },
+            {
+              "name": "transmission",
+              "type": "VARCHAR(20)"
+            },
+            {
+              "name": "car_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "manufacturer_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "price_lakh",
+              "type": "NUMERIC(6, 2)"
+            },
+            {
+              "name": "fuel_type",
+              "type": "VARCHAR(20)"
+            }
+          ]
+        },
+        "dealerships": {
+          "columns": [
+            {
+              "name": "manufacturer_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "dealer_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "city",
+              "type": "VARCHAR(100)"
+            },
+            {
+              "name": "dealer_name",
+              "type": "VARCHAR(120)"
+            }
+          ]
+        },
+        "service_records": {
+          "columns": [
+            {
+              "name": "service_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "car_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "service_type",
+              "type": "VARCHAR(50)"
+            },
+            {
+              "name": "service_cost",
+              "type": "NUMERIC(7, 2)"
+            }
+          ]
+        },
+        "manufacturers": {
+          "columns": [
+            {
+              "name": "name",
+              "type": "VARCHAR(100)"
+            },
+            {
+              "name": "manufacturer_id",
+              "type": "INTEGER"
+            }
+          ]
+        },
+        "customer_reviews": {
+          "columns": [
+            {
+              "name": "review_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "car_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "rating",
+              "type": "INTEGER"
+            },
+            {
+              "name": "review_text",
+              "type": "VARCHAR(200)"
+            }
+          ]
+        },
+        "sales": {
+          "columns": [
+            {
+              "name": "car_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "dealer_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "sale_price",
+              "type": "NUMERIC(8, 2)"
+            },
+            {
+              "name": "sale_year",
+              "type": "INTEGER"
+            },
+            {
+              "name": "sale_id",
+              "type": "INTEGER"
+            }
+          ]
+        }
+      }
+    },
+    "vegeta_wine_company": {
+      "tables": {
+        "wines": {
+          "columns": [
+            {
+              "name": "price_usd",
+              "type": "NUMERIC(6, 2)"
+            },
+            {
+              "name": "wine_name",
+              "type": "VARCHAR(150)"
+            },
+            {
+              "name": "vintage_year",
+              "type": "INTEGER"
+            },
+            {
+              "name": "wine_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "winery_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "wine_type",
+              "type": "VARCHAR(50)"
+            }
+          ]
+        },
+        "wineries": {
+          "columns": [
+            {
+              "name": "name",
+              "type": "VARCHAR(120)"
+            },
+            {
+              "name": "region",
+              "type": "VARCHAR(100)"
+            },
+            {
+              "name": "winery_id",
+              "type": "INTEGER"
+            }
+          ]
+        },
+        "distributors": {
+          "columns": [
+            {
+              "name": "city",
+              "type": "VARCHAR(100)"
+            },
+            {
+              "name": "distributor_name",
+              "type": "VARCHAR(120)"
+            },
+            {
+              "name": "distributor_id",
+              "type": "INTEGER"
+            }
+          ]
+        },
+        "sales": {
+          "columns": [
+            {
+              "name": "sale_year",
+              "type": "INTEGER"
+            },
+            {
+              "name": "bottles_sold",
+              "type": "INTEGER"
+            },
+            {
+              "name": "revenue_usd",
+              "type": "NUMERIC(10, 2)"
+            },
+            {
+              "name": "distributor_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "sale_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "wine_id",
+              "type": "INTEGER"
+            }
+          ]
+        },
+        "reviews": {
+          "columns": [
+            {
+              "name": "wine_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "review_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "review_text",
+              "type": "VARCHAR(200)"
+            },
+            {
+              "name": "rating",
+              "type": "INTEGER"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "permissions": [
+    {
+      "connection_id": 2,
+      "can_read": true,
+      "can_query": true,
+      "can_export": true,
+      "allowed_tables": [
+        "*"
+      ]
+    },
+    {
+      "connection_id": 3,
+      "can_read": true,
+      "can_query": true,
+      "can_export": true,
+      "allowed_tables": [
+        "*"
+      ]
+    },
+    {
+      "connection_id": 4,
+      "can_read": true,
+      "can_query": true,
+      "can_export": true,
+      "allowed_tables": [
+        "*"
+      ]
+    }
+  ],
+  "employees": []
+}

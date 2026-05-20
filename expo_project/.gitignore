@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+backend/.venv/
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
+.venv/
+.vscode/
+*.mp4
+*.zip
+

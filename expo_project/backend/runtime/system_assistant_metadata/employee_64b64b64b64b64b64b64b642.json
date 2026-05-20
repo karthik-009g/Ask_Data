@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-04-18T06:15:25.461296+00:00",
+  "user": {
+    "id": "64b64b64b64b64b64b64b642",
+    "role": "employee",
+    "organisation": "acme",
+    "email": "em***@acme.com",
+    "full_name": "Emp One"
+  },
+  "app": {
+    "assistant": "system_assistant",
+    "scope": "operations_metadata_permissions",
+    "forbidden": [
+      "password",
+      "token",
+      "encrypted_password",
+      "connection_url",
+      "raw credentials"
+    ]
+  },
+  "organisation": {
+    "name": "acme"
+  },
+  "connections": [],
+  "schema": {},
+  "permissions": [],
+  "employees": []
+}
