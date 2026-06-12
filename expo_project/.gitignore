@@ -1,12 +1,33 @@
+# Secrets
 .env
+.env.*
+frontend/.env.local
+
+# Python
+.venv/
+venv/
+backend/.venv/
 __pycache__/
 *.pyc
-backend/.venv/
-frontend/node_modules/
-frontend/.next/
-frontend/.env.local
-.venv/
-.vscode/
-*.mp4
-*.zip
+.pytest_cache/
 
+# Node / Next.js
+node_modules/
+.next/
+
+# IDE
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+.dist/
+
+# Archives
+*.zip
+*.mp4
+
+# OS files
+.DS_Store
+Thumbs.db
