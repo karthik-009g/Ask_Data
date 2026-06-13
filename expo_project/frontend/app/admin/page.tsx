@@ -816,12 +816,13 @@ export default function AdminPage() {
     const selectedConnectionSnapshot = [...analysisConnectionIds];
     setAnalysisSelectionSnapshot(selectedConnectionSnapshot);
 
-    let spinnerDelayTimer: ReturnType<typeof window.setTimeout> | null = null;
-    setIsAnalysisRunning(true);
-    spinnerDelayTimer = window.setTimeout(() => {
-      setShowAnalysisBuffer(true);
-    }, 220);
+   let spinnerDelayTimer: ReturnType<typeof setTimeout> | null = null;
 
+setIsAnalysisRunning(true);
+
+spinnerDelayTimer = setTimeout(() => {
+  setShowAnalysisBuffer(true);
+}, 220);
     try {
       const data = await apiRequest("/admin/analyse", token, {
         method: "POST",
