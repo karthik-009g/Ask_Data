@@ -17,6 +17,12 @@ const backendBases = Array.from(
   ])
 );
 
+const upstreamResponseBodyHeaders = [
+  "content-encoding",
+  "content-length",
+  "transfer-encoding",
+];
+
 async function proxy(request: NextRequest, context: { params: { path: string[] } }) {
   const path = (context.params.path || []).join("/");
   const query = request.nextUrl.search || "";
@@ -60,7 +66,7 @@ async function proxy(request: NextRequest, context: { params: { path: string[] }
       }
 
       const responseHeaders = new Headers(response.headers);
-      responseHeaders.delete("content-encoding");
+      upstreamResponseBodyHeaders.forEach((header) => responseHeaders.delete(header));
       responseHeaders.set("x-proxy-target", targetUrl);
       return new NextResponse(response.body, {
         status: response.status,
